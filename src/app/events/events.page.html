@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Events</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <ion-searchbar animated 
+    placeholder="Search events" 
+    debounce="50"
+    [(ngModel)]="searchTerm" 
+    (ionInput)="setFilteredItems()">
+  </ion-searchbar>
+  <ion-list>
+    <ion-list ion-item *ngFor="let item of items">
+      <h3> {{ item.event }} </h3>
+      <h5> {{ item.timestamp }} </h5>
+    </ion-list>
+  </ion-list>
+</ion-content>
